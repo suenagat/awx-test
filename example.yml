@@ -1,0 +1,8 @@
+---
+template_name: Demo Job Template
+wait_not_finish: false
+accounts:
+- url: http://www.example.org
+  user: admin
+  pass: password
+
