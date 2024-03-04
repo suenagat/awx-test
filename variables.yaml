@@ -1,0 +1,8 @@
+---
+- name: Display variables
+  hosts: all
+  tasks:
+    - name: Print variables
+      debug:
+        var: my_variable
+
