@@ -1,7 +1,7 @@
 ---
 - name: Test connection
   hosts: all
-  connection: local
+  gather_facts: false
   tasks:
     - name: Ping the hosts
       ping:
