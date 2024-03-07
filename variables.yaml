@@ -1,6 +1,7 @@
 ---
 - name: Display variables
   hosts: localhost
+  connection: local
   tasks:
     - name: Print variables
       debug:
