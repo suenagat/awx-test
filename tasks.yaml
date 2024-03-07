@@ -1,0 +1,19 @@
+---
+- hosts: all
+  gather_facts: false
+  tasks:
+    - name: test task
+      debug:
+        msg: "Success !"
+    - name: test task
+      debug:
+        msg: "Success !"
+    - name: test task
+      debug:
+        msg: "Success !"
+    - name: test task
+      debug:
+        msg: "Success !"
+    - name: test task
+      debug:
+        msg: "Success !"
