@@ -1,0 +1,23 @@
+- hosts: localhost
+  gather_facts: false
+  connection: local
+
+  tasks:
+    - name: task1
+      debug:
+        msg: task1
+      tags:
+        - a
+
+    - name: task2
+      debug:
+        msg: task2
+      tags:
+        - a
+        - b
+
+    - name: task3
+      debug:
+        msg: task3
+      tags:
+        - b
