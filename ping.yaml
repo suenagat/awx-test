@@ -1,6 +1,7 @@
 ---
 - name: Test connection
   hosts: all
+  connection: local
   tasks:
     - name: Ping the hosts
       ping:
