@@ -1,5 +1,7 @@
 ---
 - hosts: all
+  gather_facts: false
   tasks:
-    - name: Test
-
+    - name: test task
+      debug:
+        msg: "Success !"
