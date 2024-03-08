@@ -1,5 +1,6 @@
 - name: Run tasks in parallel
   hosts: all
+  connection: local
   tasks:
     - name: Run task 1
       command: task_1_command
