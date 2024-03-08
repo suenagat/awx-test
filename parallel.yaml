@@ -1,40 +1,12 @@
----
-- name: Parallel tasks example
+- name: Run tasks in parallel
   hosts: all
-  connection: local
   tasks:
-    - name: Task 1
-      command: /path/to/command1
-      async: 60
+    - name: Run task 1
+      command: task_1_command
+      async: 300
       poll: 0
 
-    - name: Task 2
-      command: /path/to/command2
-      async: 60
+    - name: Run task 2
+      command: task_2_command
+      async: 300
       poll: 0
-
-    - name: Task 3
-      command: /path/to/command3
-      async: 60
-      poll: 0
-
-    # タスクの完了を待つハンドラ
-    - name: Wait for tasks to complete
-      async_status:
-        jid: "{{ item }}"
-      register: task_result
-      until: task_result.finished
-      retries: 30
-      delay: 10
-      loop:
-        - "{{ async_result1.ansible_job_id }}"
-        - "{{ async_result2.ansible_job_id }}"
-        - "{{ async_result3.ansible_job_id }}"
-      when: item is defined
-
-  # タスクの実行結果を表示するデバッグメッセージ
-  handlers:
-    - name: Show task results
-      debug:
-        msg: "Task {{ item.item }} result: {{ item }}"
-      loop: "{{ task_result.results }}"
