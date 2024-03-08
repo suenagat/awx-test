@@ -6,7 +6,6 @@
     - name: test task
       debug:
         msg: "Success !"
----
 - hosts: localhost
   gather_facts: false
   connection: local
@@ -14,7 +13,6 @@
     - name: test task
       debug:
         msg: "Success !"
----
 - hosts: localhost
   gather_facts: false
   connection: local
@@ -22,7 +20,6 @@
     - name: test task
       debug:
         msg: "Success !"
----
 - hosts: localhost
   gather_facts: false
   connection: local
@@ -30,7 +27,13 @@
     - name: test task
       debug:
         msg: "Success !"
----
+- hosts: localhost
+  gather_facts: false
+  connection: local
+  tasks:
+    - name: test task
+      debug:
+        msg: "Success !"
 - hosts: localhost
   gather_facts: false
   connection: local
