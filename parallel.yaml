@@ -1,13 +1,14 @@
-- name: Run tasks in parallel
-  hosts: all
+---
+- hosts: all
+  gather_facts: false
   connection: local
-  tasks:
-    - name: Run task 1
-      command: task_1_command
-      async: 300
-      poll: 0
 
-    - name: Run task 2
-      command: task_2_command
-      async: 300
-      poll: 0
+  tasks:
+    - name: 1. sleep
+      command: "sleep 10"
+      
+    - name: 2. sleep
+      command: "sleep 10"
+
+    - name: 3. sleep
+      command: "sleep 10"
