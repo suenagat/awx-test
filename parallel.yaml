@@ -1,0 +1,10 @@
+---
+- name: Run tasks in parallel
+  hosts: all
+  tasks:
+    - name: Run task 1
+      block:
+        - command: task_1_command
+        - command: task_2_command
+      async: 300
+      poll: 0
