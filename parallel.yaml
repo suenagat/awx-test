@@ -1,6 +1,7 @@
 ---
 - name: Parallel tasks example
   hosts: all
+  connection: local
   tasks:
     - name: Task 1
       command: /path/to/command1
